@@ -9,8 +9,9 @@ module.exports = {
     },
     extend: {
       colors:{
-        cstmsilver:'#636674',
-        cstmorange:'#fc8625'
+        cstmsilver:'#494c5c',
+        cstmorange:'#fc8625',
+        cstmblack:'#161a1f',
       }
     },
   },
