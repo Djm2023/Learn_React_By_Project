@@ -8,7 +8,7 @@ const ReactSimplyCarouselExample = () => {
 
   useEffect(() => {
     fetchData();
-  });
+  }, []);
 
   const fetchData = async () => {
     const data = await fetch(
@@ -21,12 +21,8 @@ const ReactSimplyCarouselExample = () => {
     setListOfBanner(bannerRestaurant);
     console.log(bannerRestaurant);
   };
-  if(listOfBanner.length === 0 ){
-    return(
-      <div className="w-full h-screen">
-        hii
-      </div>
-    )
+  if (listOfBanner?.length === 0) {
+    return <div className="w-full h-screen">hii</div>;
   }
 
   return (
@@ -90,11 +86,13 @@ const ReactSimplyCarouselExample = () => {
         easing="ease"
       >
         {listOfBanner?.map((items) => (
-          <div key={items.id} className="w-[425] pr-7">
-            <img
-              className="w-[425] h-[252]"
-              src={CROUSAL_API + items.imageId}
-            />
+          <div className="flex justify-start">
+            <div key={items.id} className="w-[425] pr-7">
+              <img
+                className="w-[425] h-[252]"
+                src={CROUSAL_API + items.imageId}
+              />
+            </div>
           </div>
         ))}
       </ReactSimplyCarousel>

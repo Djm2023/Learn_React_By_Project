@@ -11,7 +11,7 @@ const Header = () => {
                 <input
                   className="w-7/12 h-6 pl-16 text-sm font-[cstmfont] font-light outline-0 cursor-pointer"
                   type="text"
-                  placeholder="Enter  Your  Location  Here "
+                  placeholder="Enter  Your  Location  Here " onChange={(e) => console.log(e.target.value)}
                 />
                 <span>
                   <i className="fa-solid fa-angle-down text-cstmorange"></i>

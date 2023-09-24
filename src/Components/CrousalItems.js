@@ -3,12 +3,12 @@ import ReactSimplyCarousel from "react-simply-carousel";
 import CROUSAL_API from "./utils/constants";
 
 const Items = () => {
-  const [activeSlideIndex1, setActiveSlideIndexOne] = useState(0);
+  const [activeSlideIndexOne, setActiveSlideIndexOne] = useState(0);
   const [cuisine, setCuisines] = useState([]);
 
   useEffect(() => {
     fetchData();
-  });
+  },[]);
 
   const fetchData = async () => {
     const data = await fetch(
@@ -21,14 +21,14 @@ const Items = () => {
     setCuisines(cuisineBanner);
     // console.log(bannerRestaurant);
   };
-  if (cuisine.length === 0) {
+  if (cuisine?.length === 0) {
     return <div>Hello</div>
   }
 
   return (
     <div className="w-full flex justify-start">
       <ReactSimplyCarousel
-        activeSlideIndex={activeSlideIndex1}
+        activeSlideIndex={activeSlideIndexOne}
         onRequestChange={setActiveSlideIndexOne}
         itemsToShow={3}
         itemsToScroll={1}
